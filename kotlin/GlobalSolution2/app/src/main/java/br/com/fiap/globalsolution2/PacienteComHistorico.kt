@@ -1,7 +1,5 @@
 package br.com.fiap.globalsolution2
 
-import android.os.Parcel
-import android.os.Parcelable
 import androidx.room.Embedded
 import androidx.room.Relation
 import androidx.versionedparcelable.VersionedParcelize
