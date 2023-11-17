@@ -7,7 +7,7 @@ import androidx.room.Update
 
 @Dao
 interface HistoricoPacienteDAO {
-    @Query("SELECT * FROM $HISTORICO_MODEL_TABLE_NAME  ORDER BY id")
+    @Query("SELECT * FROM $HISTORICO_MODEL_TABLE_NAME  ORDER BY paciente_id")
     fun select() : List<HistoricoPacienteModel>
 
     @Insert
