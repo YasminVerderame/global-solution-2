@@ -1,48 +1,38 @@
 package br.com.fiap.globalsolution2
 
-import android.app.Activity
-import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import br.com.fiap.globalsolution2.databinding.ActivityDetalhesPacienteBinding
-import java.text.SimpleDateFormat
-import java.util.Date
+import androidx.recyclerview.widget.LinearLayoutManager
+import br.com.fiap.globalsolution2.database.AppDatabase
+import br.com.fiap.globalsolution2.databinding.ActivityListarPacienteBinding
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class DetalhesPacienteActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityDetalhesPacienteBinding
-    private val ADICIONAR_HISTORICO_REQUEST = 1
+
+    private lateinit var binding: ActivityListarPacienteBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityDetalhesPacienteBinding.inflate(layoutInflater)
+        binding = ActivityListarPacienteBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val nome = intent.getStringExtra("nome")
-        val idade = intent.getIntExtra("idade", 0)
-        val email = intent.getStringExtra("email")
-        val telefone = intent.getStringExtra("telefone")
 
-        binding.txtDetalhesNome.text = "Nome: $nome"
-        binding.txtDetalhesIdade.text = "Idade: $idade"
-        binding.txtDetalhesEmail.text = "Email: $email"
-        binding.txtDetalhesTelefone.text = "Telefone: $telefone"
+        GlobalScope.launch(Dispatchers.IO) {
+            val pacientes = AppDatabase.getDatabase(applicationContext).pacienteDAO().selectAllPacientes()
 
-    }
+            Log.d("MainActivity", "Pacientes: $pacientes")
 
-    private fun abrirTelaAdicionarHistorico() {
-        val intent = Intent(this, AdicionarHistoricoActivity::class.java)
-        startActivityForResult(intent, ADICIONAR_HISTORICO_REQUEST)
-    }
+            withContext(Dispatchers.Main) {
+                binding.recyclerViewPaciente.layoutManager =
+                    LinearLayoutManager(this@DetalhesPacienteActivity)
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-
-        if (requestCode == ADICIONAR_HISTORICO_REQUEST && resultCode == Activity.RESULT_OK) {
-            val dataUltimaConsulta = data?.getSerializableExtra("dataUltimaConsulta") as Date
-            val sintomas = data.getStringExtra("sintomas")
-
-            binding.txtDetalhesDataConsulta.text = "Data da última consulta: ${SimpleDateFormat("dd/MM/yyyy").format(dataUltimaConsulta)}"
-            binding.txtDetalhesSintomas.text = "Sintomas: $sintomas"
+                val pacienteAdapter = PacienteAdapter(pacientes)
+                binding.recyclerViewPaciente.adapter = pacienteAdapter
+            }
         }
     }
 }
