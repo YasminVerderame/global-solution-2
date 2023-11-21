@@ -1,9 +1,12 @@
 package br.com.fiap.gs_kotlin
 
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
+import androidx.core.content.ContextCompat
 import br.com.fiap.gs_kotlin.database.PacientesUtils
 import br.com.fiap.gs_kotlin.databinding.ActivityMainBinding
 

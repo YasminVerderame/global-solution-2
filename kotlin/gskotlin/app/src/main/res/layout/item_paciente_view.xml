@@ -3,27 +3,39 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:padding="16dp">
 
-    <TextView
-        android:id="@+id/txtNome"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Nome: "
-        android:textStyle="bold" />
+        android:layout_weight="1">
 
-    <TextView
-        android:id="@+id/txtIdade"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Idade: " />
+        <TextView
+            android:id="@+id/txtNome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nome: "
+            android:textColor="@color/darkblue"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtIdade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Idade: "
+            android:layout_marginTop="10dp"
+            android:textColor="@color/darkblue"
+            android:textSize="16dp"
+            android:layout_below="@id/txtNome" />
+    </RelativeLayout>
 
     <Button
         android:id="@+id/btnDetalhesPaciente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
-        android:text="Info Paciente" />
+        android:backgroundTint="@color/skyblue"
+        android:text="Detalhes" />
 </LinearLayout>
