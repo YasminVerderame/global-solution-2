@@ -1,45 +1,27 @@
-# VendaWeb
+# Frontend - ODS3
 
 ## Integrantes
-- Felibe Biserra: RM: 88069
 - Gabriel Mota - RM: 88632
-- Rafael Afonso - RM: 85321
 - Vinicius Bouvier - RM: 86944
 - Yasmin Verderame - RM: 87023
 
-## Matéria e Professor 📖
-- Matéria: Microservice and Web Engineering
-- Professor: José Romualdo da Costa Filho
 
-## VENDA - WEB
-Projeto em Angular para:
-- exibir os produtos cadastrados na api Produtos
-- fazer o cadastro do cliente na api Cliente
-- fazer a compra do produto
-- gerar a venda
+## Para executar o projeto:
+Se você tiver Node.js e Angular instalado:
 
-## Tecnologias Utilizadas 💻
-O projeto foi desenvolvido utilizando as seguintes tecnologias:
-- Angular
-- Typescript
-- api externas (Produto, Cliente e Pagamento)
+- Execute: `ng serve` or`npm start` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files. 
 
-## Development server
+Se você não tiver Node.js e Angular instalado:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Instale o Node.js e o npm Você pode baixá-lo no site oficial do Node.js (https://nodejs.org/en).
+- Instale o Angular CLI (Command Line Interface): `npm install -g @angular/cli`
+- Clone o Projeto
+- Instale as Dependências do Projeto: `npm install`
+- Execute o Projeto: `ng serve` or `npm start` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files. 
 
-## Build
+## Imagens do Frontend:
+<img src="https://media.discordapp.net/attachments/1102647332350206095/1177388418175619133/image.png?ex=65725369&is=655fde69&hm=0b4061e05e313f040d7aee53d7861bd2bfd080af70ec0d284c6d8dbd3139c391&=&format=webp&width=835&height=423" alt="">
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+<img src="https://media.discordapp.net/attachments/1102647332350206095/1177388628188602378/image.png?ex=6572539b&is=655fde9b&hm=3097c33d5879cdcc2225f8bb743cacb982945ad4c02132a868ba29c550bd050a&=&format=webp&width=824&height=423" alt="">
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+<img src="https://media.discordapp.net/attachments/1102647332350206095/1177388831742378095/image.png?ex=657253cc&is=655fdecc&hm=cc56c59f6a3ecc5439f72c9ec25b6c6bbce7ffde415992bb6742179d418d4afc&=&format=webp&width=834&height=423" alt="">
