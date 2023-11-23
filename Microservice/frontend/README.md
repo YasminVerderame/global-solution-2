@@ -9,11 +9,11 @@
 ## Para executar o projeto:
 Se você tiver Node.js e Angular instalado:
 
-- Execute: `ng serve` or`npm start` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files. 
+- Execute: `ng serve` or `npm start` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files. 
 
 Se você não tiver Node.js e Angular instalado:
 
-- Instale o Node.js e o npm Você pode baixá-lo no site oficial do Node.js (https://nodejs.org/en).
+- Instale o Node.js e o npm. Você pode baixá-lo no site oficial do Node.js `(https://nodejs.org/en)`.
 - Instale o Angular CLI (Command Line Interface): `npm install -g @angular/cli`
 - Clone o Projeto
 - Instale as Dependências do Projeto: `npm install`
