@@ -12,3 +12,13 @@ cd BackEnd
 docker build -t ods3api .
 timeout /nobreak /t 10 >nul
 docker run -p 8080:8080 -d --network redeTeste ods3api 
+
+
+cd ..
+
+cd frontend/frontend
+
+docker build -t ods3front .
+timeout /nobreak /t 10 >nul
+docker run -p 32768:80 -d --network redeTeste ods3front
+
