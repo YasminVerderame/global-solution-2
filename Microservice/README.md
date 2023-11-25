@@ -9,8 +9,7 @@
 ## Projeto desenvolvido em 
 - Java 
 - Spring Boot
-- Angular e 
-
+- Angular e Typescript
 
 
 ## Para rodar o projeto todo em conjunto
